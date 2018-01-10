@@ -30,10 +30,10 @@ contract ShurToken {
         _;
     }
 
-    function ShurToken(address _addressFounder) {
+    function ShurToken() {
         owner = msg.sender;
         totalSupply = valueFounder;
-        balanceOf[_addressFounder] = valueFounder;
+        balanceOf[msg.sender] = valueFounder;
         Transfer(0x0, _addressFounder, valueFounder);
     }
 
