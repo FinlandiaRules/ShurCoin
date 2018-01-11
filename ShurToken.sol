@@ -1,6 +1,6 @@
 pragma solidity ^0.4.11;
 
-contract ShurToken {
+contract ShurCoin {
 
     string public name = "ShurCoin";      	//  token name
     string public symbol = "SHC";           //  token symbol
@@ -30,11 +30,11 @@ contract ShurToken {
         _;
     }
 
-    function ShurToken() {
+    function ShurCoin() public {
         owner = msg.sender;
         totalSupply = valueFounder;
         balanceOf[msg.sender] = valueFounder;
-        Transfer(0x0, _addressFounder, valueFounder);
+        Transfer(0x0, msg.sender, valueFounder);
     }
 
     function transfer(address _to, uint256 _value) public isRunning validAddress returns (bool success) {
